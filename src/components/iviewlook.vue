@@ -68,19 +68,16 @@
           return datetime;
         },
         getmessage(){
-          var url = "http://route.showapi.com/341-1?showapi_appid=50343&showapi_timestamp="+this.formatterDateTime()+"&showapi_sign=4ff12d5d56e547578d669e9071126c76&page=1&maxResult=20&"
-          this.$ajax
-            .get(url)
-/*          ({
+          this.$ajax({
             type: 'get',
             url: 'https://route.showapi.com/341-1',
-            data: {
+            params: {
               showapi_timestamp: this.formatterDateTime(),
               showapi_appid: '50343',
               showapi_sign: '4ff12d5d56e547578d669e9071126c76'
             },
             timeout:5000
-          })*/
+          })
             .then(response => {
             var json = response.data;
             var obj = eval(json);
